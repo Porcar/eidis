@@ -11,4 +11,9 @@ class Project extends Model {
 		return $this->hasMany('App\Objective');
 	}//
 
+	public function topics()
+	{
+			return $this->belongsToMany('App\Topic')->withTimestamps();
+	}
+
 }

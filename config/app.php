@@ -146,6 +146,9 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 
+		//provider for the partial views
+		'App\Providers\ViewComposerServiceProvider',
+
 		//Role service from https://github.com/romanbican/roles/tree/1.7.1#install
 		'Bican\Roles\RolesServiceProvider',
 

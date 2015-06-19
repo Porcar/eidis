@@ -21,6 +21,7 @@ class SubjectController extends Controller {
 
 	public function index()
 	{
+
 			$subjects = Subject::all();
 
 			return view('subjects.index', compact('subjects'));

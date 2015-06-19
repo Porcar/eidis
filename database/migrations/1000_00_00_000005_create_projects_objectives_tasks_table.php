@@ -25,9 +25,6 @@ class CreateProjectsObjectivesTasksTable extends Migration {
 			$table->integer('active')->default(0);
 			$table->timestamps();
 
-			$table->integer('subject_id')->unsigned()->default(0);
-			$table->foreign('subject_id')->references('id')->on('subjects')->onDelete('cascade');
-
 		});
 
 

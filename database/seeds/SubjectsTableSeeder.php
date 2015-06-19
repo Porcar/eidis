@@ -12,7 +12,7 @@ class SubjectsTableSeeder extends Seeder
       DB::table('subjects')->delete();
 
       $subjects = array(
-          ['id' => 1, 'name' => 'Fotogrametria a Corta Distancia', 'school' => 'Geomatica', 'department' => 'Fotogrametria', 'description' => 'Esta es la descrip de fotogram', 'created_at' => new DateTime, 'updated_at' => new DateTime],
+          ['id' => 1, 'name' => 'Fotogrametria de Corta Distancia', 'school' => 'Geomatica', 'department' => 'Fotogrametria', 'description' => 'Materia dictada por el profesor Manuel Jauregui', 'created_at' => new DateTime, 'updated_at' => new DateTime],
       );
 
       // Uncomment the below to run the seeder

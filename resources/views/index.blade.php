@@ -10,7 +10,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Fotogrametría de Corta Distancia</title>
+
+    <title>{{ $name }}</title>
 
     <!-- Bootstrap Core CSS -->
 
@@ -44,7 +45,7 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i>  <span class="light">Inicio</span> Fotogrametria
+                    <i class="fa fa-play-circle"></i>  <span class="light">Inicio</span> {{ $name }}
                 </a>
             </div>
 
@@ -82,7 +83,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Fotogrametría de Corta Distancia</h1>
+                        <h1 class="brand-heading">{{ $name }}</h1>
                         <p class="intro-text">Una materia EIDIS<br>de La Facultad de Ingenería en Universidad de Los Andes.</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
@@ -97,9 +98,9 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Sobre la Fotogrametría de Corta Distancia</h2>
-                <p>Trata de la reconstrucción y modelado 3D de objetos a partir de imágenes fotográficas de los mismos. Esta es una materia dictada por el Prof. <a href="http://ula.ve">Manuel Jauregui</a>.</p>
-                <p>Es parte del departamento de <a href="http://ula.ve/">Fotogrametría</a> De la carrera  <a href="http://ula.ve/">Ingeniería Geomática</a>.</p>
+                <h2>Sobre {{ $name }}</h2>
+                <p>{{ $description }}</p>
+                <p>Es parte del departamento de {{ $department }}. Perteneciente a la carrera Ingeniería {{ $school }}.</p>
                 <p>Dictado en la Universidad De Los Andes</p>
             </div>
         </div>
@@ -151,7 +152,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Fotogrametría a Corta Distancia</p>
+            <p>Copyright &copy; Universidad de Los Andes</p>
         </div>
     </footer>
 

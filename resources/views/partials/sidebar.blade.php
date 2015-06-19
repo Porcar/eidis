@@ -41,8 +41,21 @@
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Temas</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
-                    <li><a href="#">Tema 1</a></li>
-                    <li><a href="#">Link in level 2</a></li>
+
+              <!-- checks if the projects table has anything -->
+
+                @if( $projects->count() )
+                    @foreach( $projects as $project )
+                    <li>
+                      <a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a>
+                    </li>
+                    @endforeach
+                  @else
+                    <li>
+                      <a href="{{ route('projects.create') }}">Crear Tema</a>
+                    </li>
+                  @endif
+
                 </ul>
             </li>
         </ul><!-- /.sidebar-menu -->

@@ -16,6 +16,7 @@ Route::model('tasks', 'Task');
 Route::model('objectives', 'Objective');
 Route::model('projects', 'Project');
 Route::model('users', 'User');
+Route::model('topics', 'Topic');
 
 
 // Use slugs rather than IDs in URLs
@@ -32,7 +33,9 @@ Route::bind('objectives', function($value, $route) {
 Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
 });
-
+Route::bind('Topics', function($value, $route) {
+	return App\Topic::whereSlug($value)->first();
+});
 
 
 Route::get('home', ['uses' => 'HomeController@index', 'as' => 'home.index']);
@@ -42,6 +45,8 @@ Route::get('/', ['uses' => 'WelcomeController@index', 'as' => 'welcome.index']);
 Route::resource('users', 'UserController');
 
 Route::resource('subjects', 'SubjectController');
+
+Route::resource('subjects.topics', 'TopicsController');
 
 Route::resource('projects', 'ProjectsController');
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassProjectPivotTable extends Migration
+class CreateProjectTopicPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,11 @@ class CreateClassProjectPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_project', function(Blueprint $table) {
-            $table->integer('class_id')->unsigned()->index();
-            $table->foreign('class_id')->references('id')->on('classes')->onDelete('cascade');
+        Schema::create('project_topic', function(Blueprint $table) {
             $table->integer('project_id')->unsigned()->index();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->integer('topic_id')->unsigned()->index();
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateClassProjectPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('class_project');
+        Schema::drop('project_topic');
     }
 }
