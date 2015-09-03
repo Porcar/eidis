@@ -1,9 +1,11 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+  Crear Usuario
 @endsection
-
+@section('contentheader_title')
+  Crear Usuario
+@endsection
 
 @section('main-content')
 

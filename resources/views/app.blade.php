@@ -27,7 +27,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini">
+<body class="skin-blue sidebar-mini" onload="init();">  <!--onload="init();" is to load the space tree -->
 <div class="wrapper">
 
     @include('partials.mainheader')

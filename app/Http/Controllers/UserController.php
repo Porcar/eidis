@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use Input;
+use Redirect;
 use App\User;
 use App\Role;
 use App\Http\Requests;
@@ -24,35 +26,15 @@ class UserController extends Controller {
 		return view('users.index', compact('users'));
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
 	public function create()
 	{
-		return view('users.create');
+
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store(UserRequest $request)
+	public function store()
 	{
-		User::create($request->all());
-
-		return redirect('users');
+				return Redirect::route('users.index')->with('message', 'Project created');
 	}
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-
 	/*
 
 	public function show($id)
@@ -85,7 +67,6 @@ class UserController extends Controller {
 */
 	public function edit(User $user)
 	{
-		$roles = Role::lists('type', 'id');
 		return view('users.edit', compact('user', 'roles'));
 	}
 
@@ -96,14 +77,19 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id, UserRequest $request)
+	//public function update($id, UserRequest $request)
+	public function update(User $user)
 	{
-		$user = User::findOrFail($id);
+	//	$user = User::findOrFail($id);
 
-		$user->update($request->all());
+		//$user->update($request->all());
+
+		$input = array_except(Input::all(), '_method');
+		$user->update($input);
 
 		return redirect('users');
 	}
+
 
 	/**
 	 * Remove the specified resource from storage.
@@ -111,9 +97,10 @@ class UserController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy(User $user)
 	{
-		//
+		$user->delete();
+   	return redirect('users');
 	}
 
 }

@@ -3,11 +3,13 @@
 @section('htmlheader_title')
     Home
 @endsection
-
+@section('contentheader_title')
+  Materias
+@endsection
 
 @section('main-content')
 
-<h1>Escribe la nueva materia</h1>
+<h1>Ingresa la información relacionada a la nueva materia</h1>
 
 <hr/>
 

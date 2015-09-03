@@ -32,17 +32,9 @@
 
 <div class="form-group">
 
-  {!! Form::label('roles_id', 'Rol:') !!}
+  {!! Form::label('active', 'Estado:') !!}
 
-  {!! Form::text('roles_id', null, ['class' => 'form-control']) !!}
-
-</div>
-
-<div class="form-group">
-
-  {!! Form::label('roles_list', 'Role:') !!}
-
-  {!! Form::select('roles',$roles, null, ['class' => 'form-control'. 'multiple']) !!}
+  {!! Form::text('active', null, ['class' => 'form-control']) !!}
 
 </div>
 

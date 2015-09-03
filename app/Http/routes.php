@@ -33,7 +33,7 @@ Route::bind('objectives', function($value, $route) {
 Route::bind('projects', function($value, $route) {
 	return App\Project::whereSlug($value)->first();
 });
-Route::bind('Topics', function($value, $route) {
+Route::bind('topics', function($value, $route) {
 	return App\Topic::whereSlug($value)->first();
 });
 
@@ -42,11 +42,13 @@ Route::get('home', ['uses' => 'HomeController@index', 'as' => 'home.index']);
 
 Route::get('/', ['uses' => 'WelcomeController@index', 'as' => 'welcome.index']);
 
+Route::get('welcome', ['uses' => 'SubjectController@index', 'as' => 'subject.index']);
+
 Route::resource('users', 'UserController');
 
 Route::resource('subjects', 'SubjectController');
 
-Route::resource('subjects.topics', 'TopicsController');
+Route::resource('topics', 'TopicsController');
 
 Route::resource('projects', 'ProjectsController');
 
@@ -54,17 +56,14 @@ Route::resource('projects.objectives', 'ObjectivesController');
 
 Route::resource('projects.objectives.tasks', 'TasksController');
 
-
+//Route::resource('subjects.users', 'UserController'); <- not sure
+//Route::resource('subjects.topics', 'TopicsController');
+//Route::resource('subjects.topics.evaluations', 'EvaluationsController');
+//Route::resource('subjects.projects', 'ProjectsController');
+//Route::resource('subjects.projects.objectives', 'ObjectivesController');
+//Route::resource('subjects.projects.objectives.tasks', 'TasksController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
-]);
-
-
-Route::get('foo', ['middleware' => 'admin', function()
-{
-	return 'solo se ve si soy admin';
-}
-
 ]);

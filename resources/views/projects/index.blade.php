@@ -1,17 +1,19 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+  Proyectos
 @endsection
-
+@section('contentheader_title')
+  Proyectos
+@endsection
 
 @section('main-content')
 
-<h2>Projects</h2>
 
   @if ( !$projects->count() )
-      You have no projects
+  <h2> No hay proyectos registrados </h2>
   @else
+
       <ul>
           @foreach( $projects as $project )
               <li>

@@ -3,7 +3,9 @@
 @section('htmlheader_title')
     Home
 @endsection
-
+@section('contentheader_title')
+    Proyectos
+@endsection
 
 @section('main-content')
 

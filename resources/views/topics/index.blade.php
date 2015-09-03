@@ -1,9 +1,11 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+  Teoría
 @endsection
-
+@section('contentheader_title')
+  Teoría
+@endsection
 
 @section('main-content')
 

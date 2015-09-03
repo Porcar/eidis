@@ -3,7 +3,9 @@
 @section('htmlheader_title')
     Home
 @endsection
-
+@section('contentheader_title')
+  Materias
+@endsection
 
 @section('main-content')
 

@@ -17,6 +17,13 @@
     <link href="/css/skins/skin-blue.css" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="/plugins/iCheck/square/blue.css" rel="stylesheet" type="text/css" />
+    <!--Morris charts -->
+    <link href="/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
+    <!-- Row carousel -->
+    <link href="{{ asset('/css/rowcarousel.css') }}" rel="stylesheet">
+    <!-- infovis trees -->
+    <link type="text/css" href="/plugins/infovis/base.css" rel="stylesheet" />
+    <link type="text/css" href="/plugins/infovis/Spacetree.css" rel="stylesheet" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

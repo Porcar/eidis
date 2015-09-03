@@ -25,4 +25,9 @@ class topic extends Model {
 		return $this->belongsToMany('App\Project');
 	}
 
+	public function getSubjectListAttribute()
+	{
+		return $this->subjects->lists('id');
+	}
+
 }

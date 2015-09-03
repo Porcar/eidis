@@ -1,17 +1,17 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+  Proyecto
 @endsection
-
+@section('contentheader_title')
+  Editar Proyecto
+@endsection
 
 @section('main-content')
 
 
-<h2>Edit Project</h2>
-
     {!! Form::model($project, ['method' => 'PATCH', 'route' => ['projects.update', $project->slug]]) !!}
-        @include('projects/partials/_form', ['submit_text' => 'Edit Project'])
+        @include('projects/partials/_form', ['submit_text' => 'Editar Proyecto'])
     {!! Form::close() !!}
 
 

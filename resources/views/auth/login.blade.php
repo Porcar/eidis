@@ -49,9 +49,8 @@
     </form>
 
     <div class="social-auth-links text-center">
-        <p>- OR -</p>
-        <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Entra usando Facebook</a>
-        <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Entra usando Google+</a>
+        <p>- ó -</p>
+        <a href="#" class="btn btn-info btn-block btn-flat">Entrar como invitado</a>
     </div><!-- /.social-auth-links -->
 
     <a href="{{ url('/password/email') }}">Olvidé mi contraseña</a><br>

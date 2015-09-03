@@ -54,14 +54,8 @@
                     <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
                 </div>
                 <div class="row">
-                    <div class="col-xs-8">
-                        <div class="checkbox icheck">
-                            <label>
-                                <input type="checkbox"> Acepto los <a href="#">terminos</a>
-                            </label>
-                        </div>
-                    </div><!-- /.col -->
-                    <div class="col-xs-4">
+
+                    <div class="col-xs-12 text-center">
                         <button type="submit" class="btn btn-primary btn-block btn-flat">Registrarse</button>
                     </div><!-- /.col -->
                 </div>
@@ -70,7 +64,6 @@
             <div class="social-auth-links text-center">
                 <p>- OR -</p>
                 <a href="#" class="btn btn-block btn-social btn-facebook btn-flat"><i class="fa fa-facebook"></i> Entrar con Facebook</a>
-                <a href="#" class="btn btn-block btn-social btn-google-plus btn-flat"><i class="fa fa-google-plus"></i> Entrar usando Google+</a>
             </div>
 
             <a href="{{ url('/auth/login') }}" class="text-center">Ya estoy registrado</a>

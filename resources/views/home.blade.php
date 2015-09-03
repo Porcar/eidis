@@ -5,7 +5,6 @@
 @endsection
 
 @section('contentheader_title')
-
 @endsection
 
 @section('main-content')
@@ -33,7 +32,7 @@
         <p>Actividades Pendientes</p>
       </div>
       <div class="icon">
-        <i class="fa fa-warning"></i>
+        <i class="fa  fa-clock-o"></i>
       </div>
       <a href="#" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
     </div>
@@ -63,7 +62,7 @@
         <p>Actividades urgentes</p>
       </div>
       <div class="icon">
-        <i class="fa fa-heartbeat"></i>
+        <i class="fa fa-warning"></i>
       </div>
       <a href="#" class="small-box-footer">Más información <i class="fa fa-arrow-circle-right"></i></a>
     </div>
@@ -74,7 +73,7 @@
 
 <div class="row">
 <div class="col-lg-12">
-  <div class="box box-solid">
+
 
     <div class="box-body">
       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="5000" data-pause="hover">
@@ -89,7 +88,7 @@
           <div class="item active">
             <img src="/img/downloads-bg.jpg" alt="First slide">
             <div class="carousel-caption">
-              <h1> Bienvenido a Fotogrametría</h1>
+              <h1> Bienvenido a {{ $name }} </h1>
               <h1> Una materia que sigue el sistema EIDIS</h1>
               <h1> De la Facultad de Ingeniería de la ULA</h1>
 
@@ -136,7 +135,7 @@
         </a>
       </div>
     </div><!-- /.box-body -->
-  </div><!-- /.box -->
+
 </div><!-- /.col -->
 </div><!-- /.row -->
 

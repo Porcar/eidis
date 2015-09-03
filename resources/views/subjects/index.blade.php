@@ -1,37 +1,57 @@
 @extends('app')
 
 @section('htmlheader_title')
-    Home
+  Materias
 @endsection
-
+@section('contentheader_title')
+  Materias
+@endsection
 
 @section('main-content')
 
-  <h1> Materias </h1>
+@if ( !$subjects->count() )
+  <h2>  No hay materias registradas. </h2>
+@else
 
-  <hr/>
+<div class="container">
+@foreach( $subjects as $subject )
+  <div class="row carousel-row">
+        <div class="col-xs-12 slide-row">
+            <div id="carousel-1" class="carousel slide slide-carousel">
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                    <img src="http://lorempixel.com/150/150?rand=1" alt="Image">
+                </div>
+              </div>
+            </div>
+            <div class="slide-content">
+                <h4>{{ $subject->name }}</h4>
+                <p>
+                    {{ $subject->description }}
+                </p>
+            </div>
+            <div class="slide-footer">
+                <span class="pull-right buttons">
 
-    @if ( !$subjects->count() )
-      <h2>  No hay materias registradas. </h2>
-    @else
-        <ul>
-            @foreach( $subjects as $subject )
-                <li> <h3>
-                    {!! Form::open(array('class' => 'form-inline', 'method' => 'DELETE', 'route' => array('subjects.destroy', $subject->id))) !!}
-                        <a href="{{ route('subjects.show', $subject->id) }}">{{ $subject->name }}</a>
-                        (
-                            {!! link_to_route('subjects.edit', 'Edit', array($subject->id), array('class' => 'btn btn-info')) !!},
-                            {!! Form::submit('Delete', array('class' => 'btn btn-danger')) !!}
-                        )
+
+                    {!! Form::open(['class' => 'form-inline', 'method' => 'DELETE', 'route'=>['subjects.destroy', $subject->id]]) !!}
+                    <a href="{{route('subjects.show',$subject->id)}}" class="btn btn-sm btn-default"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                    {!! Form::submit('Eliminar', ['class' => 'btn btn-sm btn-danger']) !!}
                     {!! Form::close() !!}
-                </li> </h3>
-            @endforeach
-        </ul>
-    @endif
+                </span>
+            </div>
+        </div>
+  </div>
+  @endforeach
+  <div class="col-xs-12 col-xs-offset-5">
+  <a href="{{route('subjects.create')}}" class="btn btn-primary"><i class="fa fa-fw fa-plus"></i> Añadir Materia  </a>
+</div></div>
 
-    <p><h3>
-        {!! link_to_route('subjects.create', 'Añadir una nueva materia') !!}
-    </p></h3>
+@endif
+
+
+
 
 
 

@@ -34,27 +34,33 @@
         <ul class="sidebar-menu">
             <li class="header"></li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="{{ url('home') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li><a href="/subjects"><i class='fa fa-link'></i> <span>Materias</span></a></li>
-            <li><a href="/users"><i class='fa fa-link'></i> <span>Usuarios</span></a></li>
-            <li><a href="/projects"><i class='fa fa-link'></i> <span>Projectos</span></a></li>
+            <li class="active"><a href="{{ url('home') }}"><i class='fa  fa-home'></i> <span>Inicio</span></a></li>
+            <li><a href="/subjects"><i class='fa fa-graduation-cap'></i> <span>Materias</span></a></li>
+            <li><a href="/users"><i class='fa fa-users'></i> <span>Estudiantes</span></a></li>
+            <li><a href="/projects"><i class='fa fa-pencil-square-o'></i> <span>Proyectos</span></a></li>
             <li class="treeview">
-                <a href="#"><i class='fa fa-link'></i> <span>Temas</span> <i class="fa fa-angle-left pull-right"></i></a>
+                <a href="#"><i class='fa fa-leanpub'></i> <span>Temas</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">
 
               <!-- checks if the projects table has anything -->
 
-                @if( $projects->count() )
-                    @foreach( $projects as $project )
+              <!--  LE FALTA LA @ A LOS IF,ELSE Y ENDIF  -->
+              
+              <!--  if( $topics->count() )   -->
+
+                    @foreach( $topics as $topic )
                     <li>
-                      <a href="{{ route('projects.show', $project->slug) }}">{{ $project->name }}</a>
+                      <a href="{{ route('topics.show', $topic->slug) }}">{{ $topic->name }}</a>
                     </li>
                     @endforeach
-                  @else
+
+            <!--      else         -->
+
                     <li>
-                      <a href="{{ route('projects.create') }}">Crear Tema</a>
+                      <a href="{{ route('topics.create') }}">Crear Tema</a>
                     </li>
-                  @endif
+
+              <!--    endif          -->
 
                 </ul>
             </li>

@@ -1,13 +1,13 @@
 <?php namespace App\Http\Controllers;
 
-use Input;
-use Redirect;
-use App\Subject;
 use App\Topic;
+use App\Subject;
 use App\Http\Requests;
+use App\Http\Requests\TopicRequest;
+use Illuminate\Http\Request;
+use Illuminate\HttpResponse;
 use App\Http\Controllers\Controller;
 
-use Illuminate\Http\Request;
 
 class TopicsController extends Controller {
 
@@ -26,19 +26,20 @@ class TopicsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function create(Subject $subject)
+	public function create(Topic $topic)
 	{
-			return view('topics.create', compact('subject'));
+		$subjects = Subject::lists('name', 'id');
+
+		return view('topics.create', compact('subjects'));
 	}
 
-	public function store(Subject $subject)
+	public function store(TopicRequest $request)
 	{
-		$input = Input::all();
-		$input['subject_id'] = $subject->id;
-		Topic::create( $input );
 
 
-		return Redirect::route('home');
+		$this->createTopic($request);
+
+		return redirect('home');
 	}
 
 	/**
