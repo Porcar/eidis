@@ -17,18 +17,7 @@
             </div>
         </div>
 
-        <!-- search form (Optional) -->
-        <!--
-        <form action="#" method="get" class="sidebar-form">
-            <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search..."/>
-              <span class="input-group-btn">
-                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-              </span>
-            </div>
-        </form>
-      -->
-        <!-- /.search form -->
+
 
         <!-- Sidebar Menu -->
         <ul class="sidebar-menu">
@@ -44,23 +33,24 @@
 
               <!-- checks if the projects table has anything -->
 
-              <!--  LE FALTA LA @ A LOS IF,ELSE Y ENDIF  -->
-              
-              <!--  if( $topics->count() )   -->
 
-                    @foreach( $topics as $topic )
-                    <li>
-                      <a href="{{ route('topics.show', $topic->slug) }}">{{ $topic->name }}</a>
-                    </li>
-                    @endforeach
+                    @if(isset($name))
+                        @foreach( $topics as $topic )
+                            <li>
+                                <a href="{{ route('topics.show', $topic->slug) }}">{{ $topic->name }}</a>
+                             </li>
 
-            <!--      else         -->
-
+                        @endforeach
+                            <li>
+                              <a href="{{ route('topics.create') }}">Crear Tema</a>
+                            </li>
+                     @else
                     <li>
                       <a href="{{ route('topics.create') }}">Crear Tema</a>
                     </li>
+                   
+                    @endif
 
-              <!--    endif          -->
 
                 </ul>
             </li>

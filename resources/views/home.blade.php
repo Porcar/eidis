@@ -88,7 +88,11 @@
           <div class="item active">
             <img src="/img/downloads-bg.jpg" alt="First slide">
             <div class="carousel-caption">
+            @if(isset($name))
               <h1> Bienvenido a {{ $name }} </h1>
+            @else
+              <h1> Bienvenido al Sistema EIDIS  </h1>
+            @endif
               <h1> Una materia que sigue el sistema EIDIS</h1>
               <h1> De la Facultad de Ingeniería de la ULA</h1>
 

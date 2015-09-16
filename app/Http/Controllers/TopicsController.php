@@ -29,8 +29,8 @@ class TopicsController extends Controller {
 	 */
 	public function create(Topic $topic)
 	{
-		//$subjects = Subject::lists('name', 'id');
-		return view('topics.create', compact('subjects'));
+		$subject = Subject::all()->first();
+		return view('topics.create', compact('subject'));
 	}
 
 	public function store(TopicRequest $request)

@@ -20,12 +20,12 @@ class Subject extends Model {
 			return $this->belongsToMany('App\Semester');
 		}
 
-/*
+
 		public function topics()
 		{
 			return $this->hasMany('App\Topic');
 		}
-*/
+
 		public function getSemesterListAttribute()
 		{
 			return $this->semesters->lists('id');

@@ -13,7 +13,7 @@ class SemesterSubject extends Model {
     }
 
     public function user() {
-        return $this->hasMany('User');
+        return $this->belongsTo('User');
     }
 
 }
