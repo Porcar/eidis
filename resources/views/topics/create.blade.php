@@ -15,6 +15,7 @@
 
 {!! Form::open(['url' => 'topics']) !!}
 
+    {!! Form::hidden('subject_id', $subject->id) !!}
 
     @include ('topics.partials._form', ['submitButtonText' => 'Agregar Materia'] )
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTaskUserPivotTable extends Migration
+class CreateEvaltypeUserPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateTaskUserPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_user', function(Blueprint $table) {
+        Schema::create('evaltype_user', function(Blueprint $table) {
             $table->increments('id');
             $table->integer('grade');
-            $table->integer('state');
-
-            $table->integer('task_id')->unsigned()->index();
-            $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
+            $table->integer('state'); 
+            $table->integer('evaltype_id')->unsigned()->index();
+            $table->foreign('evaltype_id')->references('id')->on('evaltype')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
@@ -31,6 +30,6 @@ class CreateTaskUserPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('task_user');
+        Schema::drop('evaltype_user');
     }
 }

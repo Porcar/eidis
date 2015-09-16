@@ -30,14 +30,20 @@ class CreateTopicsTable extends Migration {
 			$table->increments('id');
 			$table->string('name')->default('');
 			$table->text('description')->default('');
-			$table->string('slug')->default('');
-			$table->integer('active')->default(1);
 			$table->string('link')->default('');
-			$table->integer('childof')->default(0);
+			$table->string('image')->default('');
 			$table->timestamps();
 
 			$table->integer('topic_id')->unsigned()->default(0);
 			$table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
+		});
+
+		Schema::create('node_links', function(Blueprint $table)
+		{
+			$table->increments('id');
+			$table->integer('father_id');
+			$table->integer('node_id');
+			$table->timestamps();
 		});
 	}
 
@@ -48,8 +54,10 @@ class CreateTopicsTable extends Migration {
 	 */
 	public function down()
 	{
+		Schema::drop('node_links');
 		Schema::drop('nodes');
 		Schema::drop('topics');
+
 	}
 
 }

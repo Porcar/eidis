@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTaskUserPivotTable extends Migration
+class CreateSemesterSubjectUserPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,11 @@ class CreateTaskUserPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_user', function(Blueprint $table) {
+        Schema::create('semester_subject_user', function(Blueprint $table) {
             $table->increments('id');
-            $table->integer('grade');
-            $table->integer('state');
-
-            $table->integer('task_id')->unsigned()->index();
-            $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
+            $table->integer('active')->default(0);
+            $table->integer('semester_subject_id')->unsigned()->index();
+            $table->foreign('semester_subject_id')->references('id')->on('semester_subject')->onDelete('cascade');
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
@@ -31,6 +29,6 @@ class CreateTaskUserPivotTable extends Migration
      */
     public function down()
     {
-        Schema::drop('task_user');
+        Schema::drop('semester_subject_user');
     }
 }

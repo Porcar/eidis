@@ -31,12 +31,17 @@
             <td>{{ $user->phone }}</td>
 
           @if ($user->active==1)
-              <td><span class="label label-success">Activo</span></td>
-              <td>@include('users.deactivate')</td>
+              <td><a href="{{route('users.update2',$user->id)}}"> <span class="label label-success">Activo</span></td>
+              <td>
+                <a href="{{route('users.update2',$user->id)}}" class="glyphicon glyphicon-remove" style="color:red"></a>
+              </td>
           @else
-              <td><span class="label label-danger">Desactivado</span></td>
-              <td> @include('users.activate')</td>
+              <td><a href="{{route('users.update2',$user->id)}}"><span class="label label-danger">Desactivado</span></td>
+              <td>
+              <a href="{{route('users.update2',$user->id)}}" class="glyphicon glyphicon-ok" style="color:green"></a>
+              </td>
           @endif
+
 
             <td><a href="{{route('users.edit',$user->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i> Editar</a></td>
             <td>

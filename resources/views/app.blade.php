@@ -24,10 +24,12 @@ desired effect
 |               | layout-boxed                            |
 |               | layout-top-nav                          |
 |               | sidebar-collapse                        |
-|               | sidebar-mini                            |
+|               | sidebar-mini            <-tenia esta    |
 |---------------------------------------------------------|
 -->
-<body class="skin-blue sidebar-mini" onload="init();">  <!--onload="init();" is to load the space tree -->
+
+
+<body class="skin-blue fixed" onload="init();">  <!--onload="init();" is to load the space tree -->
 <div class="wrapper">
 
     @include('partials.mainheader')
@@ -48,7 +50,11 @@ desired effect
 
 </div><!-- ./wrapper -->
 
+
 @include('partials.scripts')
+@yield('tree')
+
+
 
 </body>
 </html>

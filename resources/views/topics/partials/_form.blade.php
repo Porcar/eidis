@@ -18,15 +18,6 @@
     {!! Form::checkbox('active') !!}
 </div>
 
-
-<div class="form-group">
-
-  {!! Form::label('subject_list', 'Semestre:') !!}
-
-  {!! Form::select('subject_list[]',$subjects, null, ['class' => 'form-control'. 'multiple']) !!}
-
-</div>
-
 <div class="form-group">
 
   {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form-control']) !!}

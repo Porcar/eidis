@@ -16,6 +16,7 @@ class CreateSubjectsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('name')->default('');
+			$table->string('slug')->default('');
 			$table->string('school')->default('');
 			$table->string('department')->default('');
 			$table->mediumText('description')->default('');

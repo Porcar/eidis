@@ -90,7 +90,19 @@ class UserController extends Controller {
 		return redirect('users');
 	}
 
+	public function update2($id)
+	{
+		$user = User::findOrFail($id);
 
+		if ($user->active == "1") {
+			$user->active = "0";
+		}else {
+			$user->active = "1";
+		}
+		$user->save();
+
+		return redirect('users');
+	}
 	/**
 	 * Remove the specified resource from storage.
 	 *

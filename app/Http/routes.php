@@ -44,6 +44,8 @@ Route::get('/', ['uses' => 'WelcomeController@index', 'as' => 'welcome.index']);
 
 Route::get('welcome', ['uses' => 'SubjectController@index', 'as' => 'subject.index']);
 
+Route::get('users_active/{id}', ['uses' => 'UserController@update2', 'as' => 'users.update2']);
+
 Route::resource('users', 'UserController');
 
 Route::resource('subjects', 'SubjectController');

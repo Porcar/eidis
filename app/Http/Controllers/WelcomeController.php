@@ -1,5 +1,7 @@
 <?php namespace App\Http\Controllers;
 
+use App\Subject;
+
 class WelcomeController extends Controller {
 
 	/*
@@ -30,6 +32,30 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+			if (Subject::all()->isEmpty()) {
+
+				view()->composer('index', function($view){
+					$view->with('name', 'Sistema EIDIS');
+					$view->with('description','Sistema EIDIS');
+					$view->with('school', 'Sistema EIDIS');
+					$view->with('department', 'Sistema EIDIS');
+				});
+
+			}else{
+
+
+				view()->composer('index', function($view){
+					$view->with('name', Subject::first()->name);
+					$view->with('description', Subject::first()->description);
+					$view->with('school', Subject::first()->school);
+					$view->with('department', Subject::first()->department);
+
+				});
+
+
+
+		}
+
 		return view('index');
 	}
 
