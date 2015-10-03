@@ -7,6 +7,11 @@
 @endsection
 @section('main-content')
 
+@role('admin') 
+soy admin
+@endrole
+
+
 <div class="box-body">
 <table class="table table-striped table-bordered table-hover text-center">
     <thead>
@@ -24,10 +29,11 @@
     <tbody>
     @foreach ($users as $user)
         <tr>
+
             <td><a href="{{route('users.show',$user->id)}}"</a>{{ $user->name }}</td>
             <td>{{ $user->identification }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->id }}</td>
+            <td>{{ $user->role->id}}</td>
             <td>{{ $user->phone }}</td>
 
           @if ($user->active==1)
