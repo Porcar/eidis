@@ -54,8 +54,4 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	      return $this->belongsTo('SemesterSubject');
 	  }
 
-    public function role()
-    {
-        return $this->belongsTo('Bican\Roles\Models\Role');      
-    }
 }

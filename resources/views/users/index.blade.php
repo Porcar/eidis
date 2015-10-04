@@ -7,7 +7,7 @@
 @endsection
 @section('main-content')
 
-@role('admin') 
+@role('admin')
 soy admin
 @endrole
 
@@ -33,8 +33,9 @@ soy admin
             <td><a href="{{route('users.show',$user->id)}}"</a>{{ $user->name }}</td>
             <td>{{ $user->identification }}</td>
             <td>{{ $user->email }}</td>
-            <td>{{ $user->role->id}}</td>
+            <td>@foreach (Auth::user()->roles()->get() as $role){{ $role->name }}@endforeach</td>
             <td>{{ $user->phone }}</td>
+            <td>{{ $user->id }}</td>
 
           @if ($user->active==1)
               <td><a href="{{route('users.update2',$user->id)}}"> <span class="label label-success">Activo</span></td>

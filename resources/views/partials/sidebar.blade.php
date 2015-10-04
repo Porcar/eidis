@@ -13,7 +13,7 @@
                 <p>{{ Auth::user()->name }}</p>
 
                 <!-- Status -->
-                <a href="#"><i class="fa fa-circle text-success"></i> Conectado</a>
+                <a href="#"><i class="fa fa-circle text-success"></i> @foreach (Auth::user()->roles()->get() as $role){{ $role->slug }}@endforeach</a>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                     <li>
                       <a href="{{ route('topics.create') }}">Crear Tema</a>
                     </li>
-                   
+
                     @endif
 
 
