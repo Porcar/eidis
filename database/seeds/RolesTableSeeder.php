@@ -37,7 +37,6 @@ class RolesTableSeeder extends Seeder
     		'level' => 1
 		],
   );
-
       DB::table('roles')->insert($Role);
 
     }
