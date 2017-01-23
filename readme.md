@@ -1,3 +1,6 @@
+
+This repository is old and incomplete, the complete project is on bitbucket for extra privacy  - Fork/download at your own risk
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
